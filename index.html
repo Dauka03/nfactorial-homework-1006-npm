@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <div class="" style="display: flex;justify-content:space-around">
+        <h2 class="dark">Assigment 7</h2>
+        <button id="but" type="button" onclick="changeColor()" class="btn btn-dark">Dark</button>
+
+
+        </div>
+    </header>
+    <div class="container">
+        <div class="row main">
+            <div class="col-4">
+                <a class="links dark" href="#">Home</a>
+                <a class="links dark"   href="index.html">Mad libs</a>
+                <a class="links dark" href="tom.html">Tom Thumb</a>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                <h2 class="" style="display: flex;justify-content:center">Mad libs</h2>
+                <div class="col" style="display: flex;justify-content:center">
+                    <form action="#">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input label">Person name:</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input label">Character:</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="character">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input label">Adverb:</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="adverb">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input label">Adjective:</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="adjective">
+                                </td>
+                            </tr>
+                        </table>
+                        <input onclick="showResult()" type="submit">
+                    </form>
+                    
+                </div>
+            </div>
+            <div  class="row" style="display: flex;justify-content:center">
+                <h2 id="title" class=""style="display: flex;justify-content:center"></h2>
+                <h3 id="result" class=""style="display: flex;justify-content:center"></h3>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer class=""style="display: flex;justify-content:center">
+        <h2 class="dark">Good job!</h2>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+</body>
+<script>
+    localStorage.setItem('color','black')
+    function changeColor(){
+        let button = document.getElementsByClassName('btn btn-dark')
+        if(localStorage.color==='black'){
+            $('body').css('background-color',localStorage.getItem('color'))
+            $("#but").attr('class', 'btn btn-light');
+            $(".dark").toggleClass('light')
+            localStorage.setItem('color','aqua')
+        }
+        else if(localStorage.color==='aqua'){
+            $('body').css('background-color',localStorage.getItem('color'))
+            $("#but").attr('class', 'btn btn-dark');
+            $(".dark").toggleClass('light')
+            localStorage.setItem('color','black')
+        }
+        
+        
+    }
+    document.cookie = "user=Dalida; path=/; expires=San, 12 Jun 2022 00:00:00 GMT"
+
+
+    let resultPlace = $("#result")
+    function showResult(){
+        let personName = $("#name").val()
+        let character = $("#character").val()
+        let adverb = $("#adverb").val()
+        let adjective = $("#adjective").val()
+        $("#title").replaceWith(("<h2>Wendy's crazy MadLibs Story</h2>"))
+        $("#result").replaceWith(`<h3>One day my friend <span style="color: green;">${personName}</span> was visiting New York and ran into <span style="color: green;">${character}</span>. <span style="color: green;">${personName}</span> ran <span style="color: green;">${adverb}</span> to meen <span style="color: green;">${character}</span>. But <span style="color: green;">${character}</span> turned out to be very <span style="color: green;">${adjective}</span> and <span style="color: green;">${personName}</span> din not enjoy the meeting. </h3>`)
+    }
+</script>
+<style>
+    .horizontal-center {
+  min-width: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-width: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  justify-content: center;
+}
+    .light{
+        color: bisque;
+    }
+    .aqua{
+        color: aqua;
+    }
+    body{
+        background-color: aqua;
+    }
+    header{
+        border: 3px solid black;
+        height: 10vh;
+    }
+    .links{
+        text-decoration: none;
+        font-size: 30px;
+        display: flex;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    .col-8{
+        border: 3px solid black;
+        background-color: bisque;
+    }
+    .col-4{
+        border: 3px solid black;
+    }
+    .main{
+        border: 3px solid black;
+    }
+    .label{
+        font-size: 20px;
+        font-weight: 600;
+    }
+</style>
+
+</html>
+
+

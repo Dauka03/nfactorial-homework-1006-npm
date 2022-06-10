@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <header><div class="" style="display: flex;justify-content:center"><h2>Assigment 7</h2> </div></header>
+    <div class="container">
+        <div class="row main">
+            <div class="col-4">
+                <a class="links" href="#">Home</a>
+                <a class="links" href="index.html">Mad libs</a>
+                <a class="links" href="tom.html">Tom Thumb</a>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                <h2 class="" style="display: flex;justify-content:center">Tom Thumb</h2>
+                <div class="col" style="display: flex;justify-content:center">
+                    <form action="#">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input label">Image width (px):</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="width">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input label">Image height (px)</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="height">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="input label">Number of colors:</div>
+                                </td>
+                                <td>
+                                    <input type="text" id="number">
+                                </td>
+                            </tr>
+                        </table>
+                        <input onclick="showResult()" type="submit">
+                    </form>
+                    
+                </div>
+            </div>
+            <div  class="row" style="display: flex;justify-content:center">
+                <h3 id="result" class=""style="display: flex;justify-content:center"></h3>
+            </div>
+            </div>
+        </div>
+    </div>
+    <footer class=""style="display: flex;justify-content:center">
+        <h2>Good job!</h2>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+</body>
+<script>
+    
+
+    let resultPlace = $("#result")
+    function showResult(){
+        let width= $("#width").val()
+        let height = $("#height").val()
+        let adverb = $("#number").val()
+        let kb =  ((width * height)*3)/1024
+        $("#result").replaceWith(`<h3>File is ${kb}KB which is OK </h3>`)
+    }
+</script>
+<style>
+    .horizontal-center {
+  min-width: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-width: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  justify-content: center;
+}
+    body{
+        background-color: aqua;
+    }
+    header{
+        border: 3px solid black;
+        height: 10vh;
+    }
+    .links{
+        text-decoration: none;
+        color: black;
+        font-size: 30px;
+        display: flex;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    .col-8{
+        border: 3px solid black;
+        background-color: bisque;
+    }
+    .col-4{
+        border: 3px solid black;
+    }
+    .main{
+        border: 3px solid black;
+        height: 80vh;
+    }
+    .label{
+        font-size: 20px;
+        font-weight: 600;
+    }
+</style>
+
+</html>
