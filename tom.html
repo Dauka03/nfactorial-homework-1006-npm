@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header><div class="" style="display: flex;justify-content:center"><h2>Assigment 7</h2> </div></header>
+    <header>
+        <div class="" style="display: flex;justify-content:space-around">
+        <h2 class="dark">Assigment 7</h2>
+        <button id="but" type="button" onclick="changeColor()" class="btn btn-dark">Dark</button>
+
+
+        </div>
+    </header>
     <div class="container">
         <div class="row main">
             <div class="col-4">
-                <a class="links" href="#">Home</a>
-                <a class="links" href="index.html">Mad libs</a>
-                <a class="links" href="tom.html">Tom Thumb</a>
+                <a class="links dark" href="#">Home</a>
+                <a class="links dark"   href="index.html">Mad libs</a>
+                <a class="links dark" href="tom.html">Tom Thumb</a>
             </div>
             <div class="col-8">
                 <div class="row">
@@ -48,7 +55,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <input onclick="showResult()" type="submit">
+                        <input onclick="showCalcResult()" type="submit">
                     </form>
                     
                 </div>
@@ -60,62 +67,11 @@
         </div>
     </div>
     <footer class=""style="display: flex;justify-content:center">
-        <h2>Good job!</h2>
+        <h2 class="dark">Good job!</h2>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
+    <script src="script.js"></script>
 </body>
-<script>
-    
-
-    let resultPlace = $("#result")
-    function showResult(){
-        let width= $("#width").val()
-        let height = $("#height").val()
-        let adverb = $("#number").val()
-        let kb =  ((width * height)*3)/1024
-        $("#result").replaceWith(`<h3>File is ${kb}KB which is OK </h3>`)
-    }
-</script>
-<style>
-    .horizontal-center {
-  min-width: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-width: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  justify-content: center;
-}
-    body{
-        background-color: aqua;
-    }
-    header{
-        border: 3px solid black;
-        height: 10vh;
-    }
-    .links{
-        text-decoration: none;
-        color: black;
-        font-size: 30px;
-        display: flex;
-        font-weight: 600;
-        margin-top: 20px;
-    }
-    .col-8{
-        border: 3px solid black;
-        background-color: bisque;
-    }
-    .col-4{
-        border: 3px solid black;
-    }
-    .main{
-        border: 3px solid black;
-        height: 80vh;
-    }
-    .label{
-        font-size: 20px;
-        font-weight: 600;
-    }
-</style>
 
 </html>

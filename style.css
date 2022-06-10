@@ -1,0 +1,41 @@
+.horizontal-center {
+    min-width: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-width: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    justify-content: center;
+  }
+      .light{
+          color: bisque;
+      }
+      .aqua{
+          color: aqua;
+      }
+      body{
+          background-color: aqua;
+      }
+      header{
+          border: 3px solid black;
+          height: 10vh;
+      }
+      .links{
+          text-decoration: none;
+          font-size: 30px;
+          display: flex;
+          font-weight: 600;
+          margin-top: 20px;
+      }
+      .col-8{
+          border: 3px solid black;
+          background-color: bisque;
+      }
+      .col-4{
+          border: 3px solid black;
+      }
+      .main{
+          border: 3px solid black;
+      }
+      .label{
+          font-size: 20px;
+          font-weight: 600;
+      }
